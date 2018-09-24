@@ -19,7 +19,7 @@ function removeKeys1(object, word){
 
 const object1 = {};
 function removeKeys2(object1, word){
-	return  object1 = removeKeys1( word);
+	return          object1         =         removeKeys1 ( word , object);
    }
 console.log(removeKeys2(object1,word))
 
