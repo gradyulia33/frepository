@@ -21,7 +21,7 @@ const object1 = {};
 function removeKeys2(object1, word){
 	return          object1         =         removeKeys1 ( word , object);
    }
-console.log(removeKeys2(object1,word))
+
 
 let a = 3;
 let b = 7;
