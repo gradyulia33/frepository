@@ -30,4 +30,3 @@ function absDiff(a) {
 		console.log(abs2())
 	}	return b - a
 	}
-
