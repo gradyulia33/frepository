@@ -19,9 +19,8 @@ function removeKeys1(object, word){
 
 const object1 = {};
 function removeKeys2(object1, word){
-	return          object1         =         removeKeys1 ( word , object);
-   };
-
+	return  object1 = removeKeys1(object, word);
+   }
 
 let a = 3;
 let b = 7;
@@ -30,3 +29,4 @@ function absDiff(a) {
 		console.log(abs2())
 	}	return b - a
 	}
+  console.log(absDiff(a));
