@@ -7,13 +7,13 @@ const object = {
     e:'5'};
 const word = [ 'b', 'c', 'd'];
 function removeKeys1(object, word){
-  for (let i in object1){
+  for (let i in object){
     let k = word.includes(i);
     if(k){
       delete object[i];
     }
   }
-   	return object1;
+   	return object;
    };
 
 
