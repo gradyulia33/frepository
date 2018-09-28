@@ -16,7 +16,7 @@ function reverse(a, b){
 let arr = [1, 2, 3, 4, 5, 6];
 let n = 3;
 function clearNumbers(arr, n) {
-  var res = [];
+  let res = [];
   while (arr.length) {
     res.push(arr.splice(0, n));
   }
