@@ -1,36 +1,22 @@
 'use strict'
-function add(string) {
-  if( string  === underfined){
-  string = ''
-  }
-
-};
-const arr = [[1, '1', 3],[ 7, 'top', 9]];
- function ClearNumber(arr){
-  let arr1 = function filter(arr){typeof arr === 'number'};
-};
-
-let a = ('123');
-let b = ('456');
-let reverse = function (a) {
-let n = a.toString();
-let rev = [];
-for (let i = n.length-1; i >=0; i--){
-rev+=n[i]
-}
-return parseInt(rev)
+//alert('Формулы:'+'\n' + '1. y = kx + b;'+'\n'+'2. y = x ^ 2')
+const  a = prompt ('Формулы:'+'\n' + '1. y = kx + b;'+'\n'+'2. y = x ^ 2'+'\n'+'При выборе первой формулы, ввидите 1.' + '\n' +'При выборе второй формулу, ввидите 2 или exit:', '')
+function calculate(a) {
+    if (a == 1){
+      //alert('Ввидите переменные для формулы 1:');
+      const x = prompt('Ввидите переменные для формулы 1:'+'\n'+'Переменная x:');
+      const k = prompt('Переменная k:');
+      const b = prompt('Переменная b:');
+      const y = k*x + +b;
+      const result = alert('Результат:'+'y ='+y);
+      } 
+    else if (a == 2){
+      const x = prompt('Ввидите переменные для формулы:'+'\n'+'Переменная x:');
+      const y = x ^2;
+      const result = alert('Результат:'+'y ='+y)}
+    else if (a == 'exit'){
+      alert("Выход из задания")}
+    else (0>a>2) || prompt ('Формулы:'+'\n' + '1. y = kx + b;'+'\n'+'2. y = x ^ 2'+'\n'+'При выборе первой формулы, ввидите 1.' + '\n' +'При выборе второй формулу, ввидите 2 или exit:', '')
 
 }
-
-console.log(a);
-
-let arr = [1, 2, 3, 4, 5, 6];
-let n = 3;
-function clearNumbers(arr, n) {
-  const res = [];
-  for (let i = 0; i < arr.length; i += n) {
-    res.push(arr.slice(i, i + n));
-  }
-  return res;
-};
-console.log(clearNumbers(arr, n));
+ console.log(calculate(a))
