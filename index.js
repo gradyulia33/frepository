@@ -1,22 +1,45 @@
 'use strict'
-//alert('Формулы:'+'\n' + '1. y = kx + b;'+'\n'+'2. y = x ^ 2')
-const  a = prompt ('Формулы:'+'\n' + '1. y = kx + b;'+'\n'+'2. y = x ^ 2'+'\n'+'При выборе первой формулы, ввидите 1.' + '\n' +'При выборе второй формулу, ввидите 2 или exit:', '')
-function calculate(a) {
-    if (a == 1){
-      //alert('Ввидите переменные для формулы 1:');
-      const x = prompt('Ввидите переменные для формулы 1:'+'\n'+'Переменная x:');
-      const k = prompt('Переменная k:');
-      const b = prompt('Переменная b:');
-      const y = k*x + +b;
-      const result = alert('Результат:'+'y ='+y);
-      } 
-    else if (a == 2){
-      const x = prompt('Ввидите переменные для формулы:'+'\n'+'Переменная x:');
-      const y = x ^2;
-      const result = alert('Результат:'+'y ='+y)}
-    else if (a == 'exit'){
-      alert("Выход из задания")}
-    else (0>a>2) || prompt ('Формулы:'+'\n' + '1. y = kx + b;'+'\n'+'2. y = x ^ 2'+'\n'+'При выборе первой формулы, ввидите 1.' + '\n' +'При выборе второй формулу, ввидите 2 или exit:', '')
+const object = {
+	  a:'1',
+    b:'2', 
+    c:'3', 
+    d:'4',
+    e:'5'};
+const word = [ 'b', 'c', 'd'];
+function removeKeys1(object, word){
+  for (let i in object){
+    let k = word.includes(i);
+    if(k){
+      delete object[i];
+    }
+  }
+   	return object;
+   };
 
+function removeKeys2(object1, word){
+  const object1 = {};
+  const keys = Object.keys(object);
+  for (let i = 0; i < keys.length; i+=1) {
+   const key = keys[i];
+   let exist = false;
+
+   for (let j = 0; j < word.length; j+=1) {
+     if (key ===word[j])}{
+      exist = true;
+      break;
+     }
+   }
+  if (!exist){
+    object1{key} = object{key};
+  }
+	return  object1;
+   }
+
+let a = 3;
+let b = 7;
+function absDiff(a) {
+	function abs2(b){
+		return  Math.abs(b - a);
+	}
+  return abs2
 }
- console.log(calculate(a))
