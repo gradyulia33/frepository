@@ -1,32 +1,36 @@
 'use strict'
-const object = {
-	  a:'1',
-    b:'2', 
-    c:'3', 
-    d:'4',
-    e:'5'};
-const word = [ 'b', 'c', 'd'];
-function removeKeys1(object, word){
-  for (let i in object){
-    let k = word.includes(i);
-    if(k){
-      delete object[i];
-    }
+function add(string) {
+  if( string  === underfined){
+  string = ''
   }
-   	return object;
-   };
 
+};
+const arr = [[1, '1', 3],[ 7, 'top', 9]];
+ function ClearNumber(arr){
+  let arr1 = function filter(arr){typeof arr === 'number'};
+};
 
-const object1 = {};
-function removeKeys2(object1, word){
-	return  object1 = removeKeys1(object, word);
-   }
+let a = ('123');
+let b = ('456');
+let reverse = function (a) {
+let n = a.toString();
+let rev = [];
+for (let i = n.length-1; i >=0; i--){
+rev+=n[i]
+}
+return parseInt(rev)
 
-let a = 3;
-let b = 7;
-function absDiff(a) {
-	function abs2(b){
-		console.log(abs2())
-	}	return b - a
-	}
-  console.log(absDiff(a));
+}
+
+console.log(a);
+
+let arr = [1, 2, 3, 4, 5, 6];
+let n = 3;
+function clearNumbers(arr, n) {
+  const res = [];
+  for (let i = 0; i < arr.length; i += n) {
+    res.push(arr.slice(i, i + n));
+  }
+  return res;
+};
+console.log(clearNumbers(arr, n));
