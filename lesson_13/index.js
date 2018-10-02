@@ -11,7 +11,7 @@ function calculate(a) {
       const result = alert('Результат:'+'y ='+y);
       } 
     else if (a == 2){
-      const x = prompt('Ввидите переменные для формулы:'+'\n'+'Переменная x:');
+      const x = prompt('Ввидите переменные для формулы 2:'+'\n'+'Переменная x:');
       const y = x ^2;
       const result = alert('Результат:'+'y ='+y)}
     else if (a == 'exit'){
@@ -19,4 +19,4 @@ function calculate(a) {
     else (0>a>2) || prompt ('Формулы:'+'\n' + '1. y = kx + b;'+'\n'+'2. y = x ^ 2'+'\n'+'При выборе первой формулы, ввидите 1.' + '\n' +'При выборе второй формулу, ввидите 2 или exit:', '')
 
 }
- console.log(calculate(a))
+ 
