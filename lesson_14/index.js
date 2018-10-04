@@ -13,7 +13,7 @@ function init(arg, n) {
 	    ul.appendChild(li);
 	document.body.appendChild(ul);
 }
-console.log(init(arg, n));
+
 function listen() {
   const button = document.addEventListener('button', () => console.log('clicked');
    if (button = delete(ul)){
@@ -21,4 +21,3 @@ function listen() {
    if (button != delete(ul)){
    return false};
 }
-console.log()
