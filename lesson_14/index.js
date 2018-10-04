@@ -2,12 +2,16 @@
 const arg = {className:'class', attributes:{'data - name': 'Anatoliy'}, content:'Some Text'};
 const n;
 function init(arg, n) {
-	const ul = document.createElement(ul).body;
+	const ul = document.createElement('ul').body;
   for (let i = 0; i < arg.length; i+=1) {
     //для каждого елемента в массиве создать
-  const n = document.createElement(li).ul;
+	  const e = arg[i];  
+  const li = document.createElement('li').ul;
+	  const keys = Object.keys(e.attributes);	  
   }
-  
+	li.appendChild(document.createTextNode(e.content));
+	    ul.appendChild(li);
+	document.body.appendChild(ul);
 }
 console.log(init(arg, n));
 function listen() {
