@@ -1,23 +1,28 @@
 'use strict'
-const arg = {className:'class', attributes:{'data - name': 'Anatoliy'}, content:'Some Text'};
-const n;
-function init(arg, n) {
-	const ul = document.createElement('ul').body;
-  for (let i = 0; i < arg.length; i+=1) {
-    //для каждого елемента в массиве создать
-	  const e = arg[i];  
-  const li = document.createElement('li').ul;
-	  const keys = Object.keys(e.attributes);	  
-  }
-	li.appendChild(document.createTextNode(e.content));
-	    ul.appendChild(li);
-	document.body.appendChild(ul);
+function init(array, n) {
+	let newUl = document.createElement('ul');
+	document.body.appendChild(newUl);
+	let maxLength = (array.length > n ? n : array.length);
+	for (let i = 0; i < maxLength; i += 1) {
+		let newLi = document.createElement('li');
+		let classKey = array[i].className;
+		newLi.className += classKey;
+		let attrKey = Object.keys(array[i].attributes);
+		for (let j of attrKey) {
+			newLi.setAttribute(j, array[i].attributes[j]);
+		}
+		newLi.innerText = array[i].content;
+		newUl.appendChild(newLi);
+	}
 }
 
+// init(arr, 4);
+
+
 function listen() {
-  const button = document.addEventListener('button', () => console.log('clicked');
-   if (button = delete(ul)){
-    return true};
-   if (button != delete(ul)){
-   return false};
+	let remUl = document.getElementsByTagName('ul')[0];
+	let button = document.getElementById('button');
+	button.addEventListener('click', () => 
+	remUl.parentElement.removeChild(remUl))
 }
+console.log(listen());
