@@ -1,54 +1,42 @@
 'use strict'
-//const  a = prompt ('Формулы:'+'\n' + '1. y = kx + b;'+'\n'+'2. y = x ^ 2'+'\n'+'При выборе первой формулы, ввидите 1.' + '\n' +'При выборе второй формулу, ввидите 2 или exit:', '')
-function calculate() {
-    //const answer = prompt ('Exit?');
-    //console.log(answer);
-    //if (answer !== 'exit'){
-     // calculate();
-   // }
-   const result = {history :[]};//
-   while(true){//Пока условие верно – выполняется код из тела цикла.
-        let formula;
-        let ready = false;
-        while (!ready){
-             const answer = prompt('Choose formula, enter 1 or 2');
-             result.history.push(answer);
-             switch (answer){//Конструкция switch заменяет собой сразу несколько if.
-                 case '1'://switch начинает выполняться от соответствующей директивы case
-                 case'2':
-                 formula = answer;
-                 result.formula = answer = '1' ? 'y=kx+b' : 'y=x^2';
-                 ready = true;
-                 break;
-                 case 'exit':
-                 return;
-   }
-  }
-  if (formula === '1'){
-    const  k = getArgValue('k');//
-    if (k === 'exit'){
-      return result;
-    }
-    const  x = getArgValue('x');
-    if (x === 'exit'){
-      return result;
-    }
-    const  b = getArgValue('b');
-    if (x === 'exit'){
-      return result;
-    }
-    result.args = {
-      k, x, b,
-    };
-    alert(k*x + b);
-  }else{
-    if(formula === '2')
-      const  x = getArgValue('x', result.history);
-    if (x === 'exit'){
-      return result;
-    }
-    result.args= {x};
-    alert(x**2)
+function add(string = '❤️🇺🇦') {
+ let sum = 0;
+ for (let i = 0; i < string.length; i += 2) {
+   sum += string.charCodeAt(i) + string.charCodeAt(i + 1);//возвращает числовое значение Юникода для символа по указанному индексу 
+ }
+ return sum / (string.length / 2);
+}
+
+function clearNumbers(arr) {
+ for (let i = 0; i < arr.length; i += 1) {
+     for (let k = 0; k < arr[i].length; k += 1) {
+         if (typeof arr[i][k] !== "number") {
+             arr[i].splice(k, 1);//изменяет содержимое массива, удаляя существующие элементы и/или добавляя новые.
+             k -= 1;
+         }
      }
-  } 
- };
+ }
+ return arr;
+};
+
+function reverse(...arg) {
+ const input = arg.reverse();//на месте обращает порядок следования элементов массива. 
+ let output = [];
+ for (let i = 0; i < input.length; i += 1) {
+   const split = input[i].split('');//разбивает объект String на массив строк путём разделения строки указанной подстрокой.
+   const reversed = split.reverse();
+   output.push(reversed.join(''));
+ }
+ return output;
+}
+
+function splitArray(arr, count) {
+ const result = [];
+ for (let i = 0; i < arr.length; i += count) {
+   result.push(arr.slice(i, i + count));
+ }
+ return result;
+}
+
+
+
