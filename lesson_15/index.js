@@ -1,36 +1,119 @@
-'use strict'
-function add(string) {
-  if( string  === underfined){
-  string = ''
-  }
+'use strict';
 
-};
-const arr = [[1, '1', 3],[ 7, 'top', 9]];
- function ClearNumber(arr){
-  let arr1 = function filter(arr){typeof arr === 'number'};
-};
+(function() {
+	function generateList(numOfNum, numbersParent) {
+		const items = [];
 
-let a = ('123');
-let b = ('456');
-let reverse = function (a) {
-let n = a.toString();
-let rev = [];
-for (let i = n.length-1; i >=0; i--){
-rev+=n[i]
-}
-return parseInt(rev)
+		for (let i = 0; i < numOfNum; i += 1) {
+			const item = document.createElement('span');
 
-}
+			item.innerText = i + 1;
 
-console.log(a);
+			numbersParent.appendChild(item);
+			items.push(item);
 
-let arr = [1, 2, 3, 4, 5, 6];
-let n = 3;
-function clearNumbers(arr, n) {
-  const res = [];
-  for (let i = 0; i < arr.length; i += n) {
-    res.push(arr.slice(i, i + n));
-  }
-  return res;
-};
-console.log(clearNumbers(arr, n));
+			if (i < numOfNum - 1) {
+				const coma = document.createElement('span');
+				coma.innerText = ', ';
+				numbersParent.appendChild(coma);
+			}
+		}
+
+		return items;
+	}
+
+	const numOfNum = 20;
+	const numbersParent = document.getElementById('numbers');
+	const startBtn = document.getElementById('start');
+	const pauseBtn = document.getElementById('pause');
+	const stopBtn = document.getElementById('stop');
+	const count = document.getElementById('count');
+	const items = generateList(numOfNum, numbersParent);
+	let id;
+	let seconds = 0;
+
+	pauseBtn.disabled = true;
+	stopBtn.disabled = true;
+
+	startBtn.addEventListener('click', () => {
+		startBtn.disabled = true;
+		pauseBtn.disabled = false;
+		stopBtn.disabled = false;
+
+		id = setInterval(() => {
+			const index = seconds % (numOfNum * 2);
+			if (index < numOfNum) {
+				items[index].style.background = 'green';
+			} else if (items[numOfNum * 2 - index - 1]) {
+				items[numOfNum * 2 - index - 1].style.background = 'black';
+			}
+
+			count.innerText = `${++seconds} seconds`;
+		}, 1000);
+	});
+
+	pauseBtn.addEventListener('click', () => {
+		startBtn.disabled = false;
+		pauseBtn.disabled = true;
+		clearInterval(id);
+	});
+
+	stopBtn.addEventListener('click', () => {
+		startBtn.disabled = false;
+		pauseBtn.disabled = true;
+		stopBtn.disabled = true;
+		clearInterval(id);
+		seconds = 0;
+		count.innerText = '0 seconds';
+    //buttons 
+  const firstBtn = document.getElementById('X1');
+  const secondBtn = document.getElementById('X2');
+  const thirdBtn = document.getElementById('X3');
+ 
+          firstBtn.addEventListener('click', () =>{
+    firstBtn.disabled = true;
+    secondBtn.disabled = false;
+    thirdBtn.disabled = false;
+ 
+     id = setInterval(() => {
+			const index = seconds % (numOfNum * 2);
+			if (index < numOfNum) {
+				items[index].style.background = 'green';
+			} else if (items[numOfNum * 2 - index - 1]) {
+				items[numOfNum * 2 - index - 1].style.background = 'black';
+			}
+     count.innerText = `${++seconds} seconds`;
+     }, 500);
+     }); 
+           secondBtn.addEventListener('click', () => {
+    secondBtn.disabled = true;
+    firstBtn.disabled = false;
+    thirdBtn.disabled = false;
+
+    id = setInterval(() => {
+			const index = seconds % (numOfNum * 2);
+			if (index < numOfNum) {
+				items[index].style.background = 'green';
+			} else if (items[numOfNum * 2 - index - 1]) {
+				items[numOfNum * 2 - index - 1].style.background = 'black';
+			}
+     count.innerText = `${++seconds} seconds`;
+     }, 200);
+     });
+           thirdBtn.addEventListener('click', () =>{
+   thirdBtn.disabled = true;
+   firstBtn.disabled = false;
+   secondBtn.disabled = false;
+
+   id = setInterval(() => {
+			const index = seconds % (numOfNum * 2);
+			if (index < numOfNum) {
+				items[index].style.background = 'green';
+			} else if (items[numOfNum * 2 - index - 1]) {
+				items[numOfNum * 2 - index - 1].style.background = 'black';
+			}
+    count.innerText = `${++seconds} seconds`;
+  }, 100);
+});
+});
+}())
