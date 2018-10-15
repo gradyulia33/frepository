@@ -1,16 +1,21 @@
 'use strict'
 const date = document.getElementById('date');
 const input = document.getElementById('input');
-import mexp from 'math-expression-evaluator';
+const res = document.getElementById('res');
 
-function dates(date, input){
-date = new Date();
-//let nowdate = Date.now();
-//let result = date - nowdate;
-//let day = date.getDate();
+function dates(res, input){
+input = new Date("21-10-2018");
+let newdate = input.toGMTString();
+let nowdate = Date.now();
+let result = newdate - nowdate;
+result /= 1000;
+result /=60;
+result /=60;
+result /=24;
 //let hours = date.getHours();
 //date.toISOString();
 //result.toGMTString());
-alert(date);
+alert(result);
 };
-input.addEventListener('change', dates(date, input));
+
+    
