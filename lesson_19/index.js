@@ -1,6 +1,6 @@
 'use strict'
-//Human  = {name ='Yulia', years = 20};
-function Human(name, years){
+//Human  ({name ='Yulia', years = 20});
+function Human(name ='Yulia', years = 20){
             this.name,
             this.years,
 }
