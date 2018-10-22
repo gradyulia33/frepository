@@ -1,5 +1,5 @@
 'use strict'
-Human  = {name ='Yulia', years = 20};
+//Human  = {name ='Yulia', years = 20};
 function Human(name, years){
             this.name,
             this.years,
