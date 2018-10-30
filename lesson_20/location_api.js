@@ -7,7 +7,15 @@ class LocationApi:
         1. getMyIp - делает запрос на сервер и возвращает ваш IP (делать запрос на адрес https://api.ipify.org?format=json).
         2. getMy*/
         export default public class LocationApi{
-            $.getJSON('https://api.ipify.org?format=json', function(data) {
-  console.log(JSON.stringify(data, null, 2));
-});
-} 
+            getMyIp() {
+    return fetch('https://api.ipify.org?format=json'),//запрос
+    .then(res => res.json())
+    .then(obj => obj.ip);
+    }
+
+getMyLocation(ip){
+    return fetch('https://ip-api.com/json/${ip}'), 
+    .then(res => res.json())
+    .then(obj => ({ lat: obj.lat, lon: obj.lon}));
+    }
+}
