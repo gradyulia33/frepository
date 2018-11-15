@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fs search</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="top"></div>
+<script class="table" type="text/babel">
+const Clubs = [ {
+    id:1,
+    name:"Футбасик",
+    type: 'football club',
+    age:'children 2-6 years',
+    phone:'+380995633456',
+},{
+    id:2,
+    name:'Ровестник',
+    type:'hand-made',
+    age:'children 7-15years',
+    phone:'+380996578675',
+},{
+ id:3,
+ name:'Stydio of dance',
+ type:'dance',
+ phone:'+3809765657676',
+}, {
+    id:4,
+    name:"Art studio",
+    type:'art',
+    phone:'+3809997676744',
+    adress:'Gogolya, 19 str'.
+}];
+
+const ClubsSearch = React.createClass({
+    getInitialState: function() {
+                return {
+                    Contacts: Clubs
+                };
+            },
+    Search:function (event){
+const searchquery = event.target.value.toLowerCase();
+const Contacts = Clubs.filter(function(el) {
+    const searchValue = el.name.toLowerCase();
+                    return searchValue.indexOf(searchquery) !== -1;
+                });
+                this.setState({
+                    Contacts:Contacts
+                });
+            },
+    render: function() {
+                return (
+                    <div className ="club-form">
+                            <input type="text" placeholder="Search..." className="search-field" onChange={this.Search} />
+                            <ul className="clubs-contacts">
+                            {
+                               this.state.Contacts.map(function(el) {
+                                   return <Club 
+                                   key={el.id}
+                                   name={el.name}
+                                   type={el.type}
+                                   age={el.age}
+                                   phone={el.phone}
+                                   adress={el.adress}
+                                   />;
+                               })
+                            }
+                            </ul>
+                            </div>                   
+);
+}
+});
+
+///вывод на страницу
+ReactDOM.render(
+            <ClubsSearch/>,
+            document.getElementById("top")
+        );
+
+
+
+const Club  = React.createClass({
+            render: function() {
+                return (
+                    <div className="for">
+                   
+                        <div className="for-name">{this.props.name}</div>
+                        <div className="for-type">{this.props.type}</div>
+                        <div className="for-age">{this.props.age}</div>
+                        <div className="for-phone">{this.props.phone}</div>
+                        <div className="for-adress">{this.props.adress}</div>
+                       
+                </div>
+                );
+            }
+        });
+</script>
+</body>
+</html>
